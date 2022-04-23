@@ -1,16 +1,12 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 import Header from './Header';
-import {
-  MemoryRouter,
-} from "react-router-dom";
+import { Typography} from "@mui/material";
 
-test('renders without crashing', () => {
+test('check Header component', () => {
   const component = shallow(
-    <MemoryRouter>
-      <Header/>
-    </MemoryRouter>
+    <Header/>
   );
-  console.log(component.text())
-  expect(component.text()).toEqual('Project 01 - ReactJS Redux')
+
+  expect(component.find(Typography).text()).toEqual('ReactJs - Reskill')
 });
